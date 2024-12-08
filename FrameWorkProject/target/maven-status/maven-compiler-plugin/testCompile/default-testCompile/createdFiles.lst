@@ -1,0 +1,6 @@
+testCases\IssueTrackingTest.class
+testCases\CreateNewRepositoryTest.class
+testCases\LoginTest.class
+testCases\NavigationBetweenRepositoryFeatures.class
+testCases\PullRequestWorkflow.class
+testCases\Temp.class
