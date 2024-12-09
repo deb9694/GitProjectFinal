@@ -17,10 +17,8 @@ public class Util extends TestBase {
 
 
         try {
-            // Create WebDriverWait instance
             WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutInSeconds));
 
-            // Wait until the element is clickable
             wait.until(ExpectedConditions.elementToBeClickable(element));
 
             TestListener.logStep("Element found  successfully!");
@@ -33,13 +31,10 @@ public class Util extends TestBase {
 
 
         try {
-            // Create WebDriverWait instance
+
             WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutInSeconds));
 
-            // Wait until the element is clickable
             wait.until(ExpectedConditions.elementToBeClickable(element));
-
-            // Click the element
             element.click();
             TestListener.logStep("Element clicked successfully!");
         } catch (Exception e) {
@@ -49,15 +44,12 @@ public class Util extends TestBase {
 
     public static void waitAndClick(String xpath, int timeoutInSeconds) {
         try {
-            WebDriver driver = getDriver(); // Replace with your WebDriver instance provider
+            WebDriver driver = getDriver(); 
 
-            // Create WebDriverWait instance
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
 
-            // Wait until the element located by XPath is clickable
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 
-            // Click the element
             element.click();
             TestListener.logStep("Element located by XPath [" + xpath + "] clicked successfully!");
         } catch (Exception e) {
@@ -72,10 +64,8 @@ public class Util extends TestBase {
 
     public static void moveToElementAndClick(WebElement element) {
         try {
-            // Create Actions instance
             Actions actions = new Actions(getDriver());
 
-            // Move to the element and click
             actions.moveToElement(element).click().perform();
 
             TestListener.logStep("Moved to element and clicked successfully!");
