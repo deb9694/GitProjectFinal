@@ -68,11 +68,6 @@ public class TestListener implements ITestListener {
         LogUtil.info("Test suite finished: " + context.getName());
         ExtentReportManager.endReport(); // Flush the Extent report
     }
-
-    /**
-     * Add a custom step logger for each test step.
-     * This can be called dynamically during test execution.
-     */
     public static void logStep(String message) {
         ExtentTest test = extentTest.get();
         if (test != null) {
